@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<!-- Templates for extracting  informations from the websites #There are many tables that can not be identified &nbsp;==\u00a02#-->
+
+<property>
+  <name>template.baidubaike.movies</name>
+  <value>MovieChineseName,//DD[@class='lemmaWgt-lemmaTitle-title']/H1,Actor,//TABLE[@nslog-type='603'],RoleIntroduction,//UL[@class='module-common-roleIntroduction']|//TABLE[@class='transparentBorder']</value>
+  <description>MovieEnglishName,//DT[text()='外文名']/following-sibling::DD[1],Director,//DT[text()='类\u00a0\u00a02\u00a02\u00a02型']/following-sibling::DD[1],</description>
+</property>
+
+<property>
+  <name>template.baidubaike.actors</name>
+  <value></value>
+  <description>ActorChineseName,//DD[@class='lemmaWgt-lemmaTitle-title']/H1,ActorEnglishName,//DT[text()='外文名']/following-sibling::DD[1],ActorAliasName,ActorBirthName,gender,birthday,bloodtype,height,weight,profession,actorCompany,actorAwards,ActorIntroduction,//DIV[@class='lemma-summary'],ActorProduction,//DIV[@class='starMovieAndTvplay']|//DIV[@id='module-music-'],</description>
+</property>
+
+</configuration>

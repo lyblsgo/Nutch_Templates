@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<!-- Templates for extracting  informations from the websites -->
+
+<property>
+  <name>template.douban.test</name>
+  <value>//DIV[@property='v:description']|//TITLE</value>
+  <description>template for awardsofpeople </description>
+</property>
+
+
+
+</configuration>

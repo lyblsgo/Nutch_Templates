@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+  
+  http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<gora-orm>
+    
+    <table name="webpage">
+        <family name="p" maxVersions="1"/> <!-- This can also have params like compression, bloom filters -->
+        <family name="f" maxVersions="1"/>
+        <family name="s" maxVersions="1"/>
+        <family name="il" maxVersions="1"/>
+        <family name="ol" maxVersions="1"/>
+        <family name="h" maxVersions="1"/>
+        <family name="mtdt" maxVersions="1"/>
+        <family name="mk" maxVersions="1"/>
+	    <family name="movie" maxVersions="1"/>
+	    <family name="cinema" maxVersions="1"/>
+	<family name="actor" maxVersions="1"/>
+	<family name="award" maxVersions="1"/>
+	<family name="weibo" maxVersions="1"/>
+	<family name="No" maxVersions="1"/>
+	<family name="activity" maxVersions="1"/>
+    </table>
+    <class table="webpage" keyClass="java.lang.String" name="org.apache.nutch.storage.WebPage">
+        
+        <!-- fetch fields                                       -->
+        <field name="baseUrl" family="f" qualifier="bas"/>
+        <field name="status" family="f" qualifier="st"/>
+        <field name="prevFetchTime" family="f" qualifier="pts"/>
+        <field name="fetchTime" family="f" qualifier="ts"/>
+        <field name="fetchInterval" family="f" qualifier="fi"/>
+        <field name="retriesSinceFetch" family="f" qualifier="rsf"/>
+        <field name="reprUrl" family="f" qualifier="rpr"/>
+        <field name="content" family="f" qualifier="cnt"/>
+        <field name="contentType" family="f" qualifier="typ"/>
+        <field name="protocolStatus" family="f" qualifier="prot"/>
+        <field name="modifiedTime" family="f" qualifier="mod"/>
+        <field name="prevModifiedTime" family="f" qualifier="pmod"/>
+        <field name="batchId" family="f" qualifier="bid"/>
+
+        <!-- parse fields                                       -->
+        <field name="title" family="p" qualifier="t"/>
+        <field name="text" family="p" qualifier="c"/>
+        <field name="parseStatus" family="p" qualifier="st"/>
+        <field name="signature" family="p" qualifier="sig"/>
+        <field name="prevSignature" family="p" qualifier="psig"/>
+        
+        <!-- score fields                                       -->
+        <field name="score" family="s" qualifier="s"/>
+        <field name="headers" family="h"/>
+        <field name="inlinks" family="il"/>
+        <field name="outlinks" family="ol"/>
+        <field name="metadata" family="mtdt"/>
+        <field name="markers" family="mk"/>
+
+	<!-- movie fields                                       -->
+	<field name="movieIdProfessional" family="movie" qualifier="idPro"/>
+	<field name="movieIdIMDB" family="movie" qualifier="idIMDB"/>
+	<field name="movieIdMtime" family="movie" qualifier="idMtime"/>
+	<field name="movieIdDouban" family="movie" qualifier="idDouban"/>
+	<field name="movieId1905" family="movie" qualifier="id1905"/>
+	<field name="movieChineseName" family="movie" qualifier="CName"/>
+	<field name="movieEnglishName" family="movie" qualifier="EName"/>
+	<field name="movieShortName" family="movie" qualifier="sName"/>
+	<field name="movieAliasName" family="movie" qualifier="aName"/>
+	<field name="director" family="movie" qualifier="director"/>
+	<field name="writer" family="movie" qualifier="writer"/>
+	<field name="actor" family="movie" qualifier="actor"/>
+	<field name="producer" family="movie" qualifier="producer"/>
+	<field name="cinematography" family="movie" qualifier="cinematography"/>
+	<field name="cutter" family="movie" qualifier="cutter"/>
+	<field name="wardrobe" family="movie" qualifier="wardrobe"/>
+	<field name="visualAffectArtist" family="movie" qualifier="visual"/>
+	<field name="associateDirector" family="movie" qualifier="assd"/>
+	<field name="movieType" family="movie" qualifier="type"/>
+	<field name="publishCompany" family="movie" qualifier="pubCom"/>
+	<field name="produceCompany" family="movie" qualifier="proCom"/>
+	<field name="distributionInformation" family="movie" qualifier="disInfo"/>
+	<field name="plotIntroduction" family="movie" qualifier="plot"/>
+	<field name="roleIntroduction" family="movie" qualifier="role"/>
+	<field name="movieLongComment" family="movie" qualifier="lComment"/>
+	<field name="movieShortComment" family="movie" qualifier="sComment"/>
+	<field name="movieWeiboComment" family="movie" qualifier="wComment"/>
+	<field name="movieNews" family="movie" qualifier="news"/>
+	<field name="movieScoreIMDB" family="movie" qualifier="sIMDB"/>
+	<field name="movieScoreMtime" family="movie" qualifier="sMtime"/>
+	<field name="movieScoreDouban" family="movie" qualifier="sDouban"/>
+	<field name="movieScore1905" family="movie" qualifier="s1905"/>
+	<field name="movieAwards" family="movie" qualifier="awards"/>
+
+	<!-- cinema fields                                       -->
+	<field name="cinemaIdProfessional" family="cinema" qualifier="idPro"/>
+	<field name="cinemaIdMtime" family="cinema" qualifier="idMtime"/>
+	<field name="cinemaIdGewara" family="cinema" qualifier="idGewara"/>
+	<field name="cinemaIdSell" family="cinema" qualifier="idSell"/>
+	<field name="cinemaChineseName" family="cinema" qualifier="CName"/>
+	<field name="cinemaShortName" family="cinema" qualifier="sName"/>
+	<field name="cinemaAliasName" family="cinema" qualifier="aName"/>
+	<field name="cinemaCity" family="cinema" qualifier="city"/>
+	<field name="cinemaDistrict" family="cinema" qualifier="district"/>
+	<field name="cinemaStreet" family="cinema" qualifier="street"/>
+	<field name="cinemaAmapLocation" family="cinema" qualifier="aLocation"/>
+	<field name="cinemaBaiduLocation" family="cinema" qualifier="bLocation"/>
+	<field name="theaterChainName" family="cinema" qualifier="theaterChain"/>
+	<field name="filmInvestmentCompany" family="cinema" qualifier="investmentCom"/>
+	<field name="cinemaAssetsJoining" family="cinema" qualifier="join"/>
+	<field name="bus" family="cinema" qualifier="bus"/>
+	<field name="subway" family="cinema" qualifier="subway"/>
+	<field name="drive" family="cinema" qualifier="drive"/>
+	<field name="cinemaFacility" family="cinema" qualifier="facility"/>
+	<field name="cinema3D" family="cinema" qualifier="3D"/>
+	<field name="cinemaCreditCard" family="cinema" qualifier="card"/>
+	<field name="cinemaSellGoods" family="cinema" qualifier="sell"/>
+	<field name="cinemaParking" family="cinema" qualifier="parking"/>
+	<field name="cinemaChildrenTicket" family="cinema" qualifier="cTicket"/>
+	<field name="cinemaResting" family="cinema" qualifier="resting"/>
+	<field name="cinemaIntroduction" family="cinema" qualifier="introduction"/>
+	<field name="cinemaDeals" family="cinema" qualifier="deals"/>
+	<field name="cinemaCommentMtime" family="cinema" qualifier="cMtime"/>
+	<field name="cinemaCommentGewara" family="cinema" qualifier="cGewara"/>
+	<field name="cinemaCommentDianping" family="cinema" qualifier="cDianping"/>
+	<field name="cinemaCommentWeibo" family="cinema" qualifier="cWeibo"/>
+	<field name="cinemaScoreMtime" family="cinema" qualifier="sMtime"/>
+	<field name="cinemaScoreGewara" family="cinema" qualifier="sGewara"/>
+	<field name="cinemaScoreDianping" family="cinema" qualifier="sDianping"/>
+
+	<!-- actor fields                                       -->	
+	<field name="actorIdMtime" family="actor" qualifier="idMtime"/>
+	<field name="actorIdDouban" family="actor" qualifier="idDouban"/>
+	<field name="actorId1905" family="actor" qualifier="id1905"/>
+	<field name="actorIdIMDB" family="actor" qualifier="idIMDB"/>
+	<field name="actorChineseName" family="actor" qualifier="CName"/>
+	<field name="actorEnglishName" family="actor" qualifier="EName"/>
+	<field name="actorShortName" family="actor" qualifier="sName"/>
+	<field name="actorAliasName" family="actor" qualifier="aName"/>
+	<field name="actorBirthName" family="actor" qualifier="bName"/>
+	<field name="gender" family="actor" qualifier="gender"/>
+	<field name="birthday" family="actor" qualifier="bday"/>
+	<field name="birthplace" family="actor" qualifier="bplace"/>
+	<field name="bloodtype" family="actor" qualifier="btype"/>
+	<field name="height" family="actor" qualifier="height"/>
+	<field name="weight" family="actor" qualifier="weight"/>
+	<field name="actorIntroduction" family="actor" qualifier="intro"/>
+	<field name="birthplaceIntroduction" family="actor" qualifier="bpIntro"/>
+	<field name="profession" family="actor" qualifier="prof"/>
+	<field name="actorCompany" family="actor" qualifier="company"/>
+	<field name="actorNews" family="actor" qualifier="news"/>
+	<field name="actorProduction" family="actor" qualifier="prod"/>
+	<field name="actorCommentMtime" family="actor" qualifier="cMtime"/>
+	<field name="actorCommentGewara" family="actor" qualifier="cGewara"/>
+	<field name="actorCommentDouban" family="actor" qualifier="cDouban"/>
+	<field name="actorCommentWeibo" family="actor" qualifier="cWeibo"/>
+	<field name="actorScore" family="actor" qualifier="score"/>
+	<field name="relatives" family="actor" qualifier="rela"/>
+	<field name="gossip" family="actor" qualifier="gossip"/>
+	<field name="actorAwards" family="actor" qualifier="awards"/>
+
+	<!-- award fields                                       -->	
+	<field name="awardIdMtime" family="award" qualifier="idMtime"/>
+	<field name="awardIdIMDB" family="award" qualifier="idIMDB"/>
+	<field name="awardId1905" family="award" qualifier="id1905"/>
+	<field name="awardChineseName" family="award" qualifier="CName"/>
+	<field name="awardEnglishName" family="award" qualifier="EName"/>
+	<field name="awardShortName" family="award" qualifier="sName"/>
+	<field name="awardAliasName" family="award" qualifier="aName"/>
+	<field name="awardHoldTime" family="award" qualifier="time"/>
+	<field name="awardHoldPlace" family="award" qualifier="place"/>
+	<field name="awardHoldCompany" family="award" qualifier="company"/>
+	<field name="awardItems" family="award" qualifier="item"/>
+	<field name="awardMovies" family="award" qualifier="movie"/>
+
+	<!-- weibo fields                                       -->
+	<field name="weiboV" family="weibo" qualifier="V"/>
+	<field name="weiboLevel" family="weibo" qualifier="level"/>
+	<field name="weiboName" family="weibo" qualifier="name"/>
+	<field name="weiboId" family="weibo" qualifier="id"/>
+	<field name="weiboOfficial" family="weibo" qualifier="official"/>
+	<field name="weiboFans" family="weibo" qualifier="fans"/>
+	<field name="weiboNum" family="weibo" qualifier="num"/>
+	<field name="weiboInterest" family="weibo" qualifier="interest"/>
+	<field name="weiboTime" family="weibo" qualifier="time"/>
+	<field name="weiboContent" family="weibo" qualifier="content"/>
+	<field name="weiboZan" family="weibo" qualifier="z"/>
+	<field name="weiboTopic" family="weibo" qualifier="topic"/>
+	<field name="weiboTransmit" family="weibo" qualifier="tr"/>
+	<field name="weiboComment" family="weibo" qualifier="comment"/>
+
+	<!-- No fields                                       -->
+	<field name="NoProfessional" family="No" qualifier="idPro"/>
+	<field name="NoSite" family="No" qualifier="idSite"/>
+	<field name="siteMtime" family="No" qualifier="sMtime"/>
+	<field name="siteTaobao" family="No" qualifier="sTaobao"/>
+	<field name="siteGewara" family="No" qualifier="sGewara"/>
+	<field name="siteMaoyan" family="No" qualifier="sMaoyan"/>
+	<field name="siteWangpiao" family="No" qualifier="sWangpiao"/>
+	<field name="siteSpider" family="No" qualifier="sSpider"/>
+	<field name="siteBaidu" family="No" qualifier="sBaidu"/>
+	<field name="siteAmap" family="No" qualifier="sAmap"/>
+	<field name="NoFilm" family="No" qualifier="film"/>
+	<field name="NoTheater" family="No" qualifier="thea"/>
+	<field name="NoHall" family="No" qualifier="hall"/>
+	<field name="sellSeat" family="No" qualifier="seat"/>
+	<field name="price" family="No" qualifier="price"/>
+	<field name="vipPrice" family="No" qualifier="vPrice"/>
+	<field name="promotionPrice" family="No" qualifier="prPrice"/>
+	<field name="NoLanguage" family="No" qualifier="language"/>
+	<field name="NoVersion" family="No" qualifier="version"/>
+	<field name="NoTime" family="No" qualifier="time"/>
+
+	<!-- activity fields                                       -->
+	<field name="activitySite" family="activity" qualifier="site"/>
+	<field name="activityFilm" family="activity" qualifier="film"/>
+	<field name="activityTheater" family="activity" qualifier="thea"/>
+	<field name="activityRule" family="activity" qualifier="rule"/>
+	<field name="activityPrPrice" family="activity" qualifier="prPrice"/>
+	<field name="activityPrice" family="activity" qualifier="price"/>
+	<field name="activityTime" family="activity" qualifier="time"/>
+	<field name="activityEffectTime" family="activity" qualifier="efTime"/>
+
+	<field name="movieNewsOutlinks" family="movie" qualifier="newsOl"/>
+	<field name="movieNewsName" family="movie" qualifier="newsNa"/>
+    </class>
+    
+    <table name="host">
+      <family name="mtdt" maxVersions="1"/>
+      <family name="il" maxVersions="1"/>
+      <family name="ol" maxVersions="1"/>
+    </table>
+    
+    <class table="host" keyClass="java.lang.String" name="org.apache.nutch.storage.Host">
+      <field name="metadata" family="mtdt"/>
+      <field name="inlinks" family="il"/>
+      <field name="outlinks" family="ol"/>
+    </class>
+    
+</gora-orm>

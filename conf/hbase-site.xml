@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+/**
+ * Copyright 2010 The Apache Software Foundation
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration>
+
+<property>
+<name>hbase.rootdir</name>
+<value>hdfs://localhost:54310/hbase</value>
+<description>端口号和ip地址要与hadoop配置参数fs.default.name一致,这里与hadoop的hdfs建立了联系，如果你hadoop dfs -ls 发现没有hbase这个文件夹，运行：hadoop dfs -ls /hbase</description>
+</property>
+
+<property>
+<name>hbase.cluster.distributed</name>
+<value>true</value>
+<description>打开hbase分布模式</description>
+</property>
+
+<property>
+<name>hbase.master</name> 
+<value>ubuntu03:90000</value>
+<description>指定hbase集群主控节点</description>
+</property>
+
+<property>
+<name>hbase.zookeeper.quorum</name> 
+<value>ubuntu03</value>
+<description>指定zookeeper集群节点名,因为是由zookeeper表决算法决定的</description>
+</property>
+
+<property>
+<name>hbase.zookeeper.property.dataDir</name> 
+<value>/home/test/hadoop-1.2.1/hbase-0.90.4/zookeeper</value>
+<description>指zookeeper集群data目录</description>
+</property>
+
+</configuration>

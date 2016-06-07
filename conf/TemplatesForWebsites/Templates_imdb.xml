@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<!-- Templates for extracting  informations from the websites -->
+
+<property>
+  <name>template.mtime.awardsofpeople</name>
+  <value>//DIV[@class='per_awardsbox']//DD|//DIV[@class='per_awardsbox']//H3|//DIV[@id='awardInfo_data']/DD/H3|//DIV[@id='awardInfo_data']/DD/DL/DT|//DIV[@id='awardInfo_data']/DD/DL/DD</value>
+  <description>template for awardsofpeople </description>
+</property>
+
+
+</configuration>

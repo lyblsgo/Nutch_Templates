@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<!-- Templates for extracting  informations from the websites -->
+
+<property>
+  <name>template.mtime.awardsofpeople</name>
+  <value>MovieChineseName,//DIV[@class='per_header']//H2[@pan='M14_Person_Index_PersonName']/A,MovieEnglishName,//DIV[@class='per_header']//P[@pan='M14_Person_Index_PersonName']/A,ActorAwards,//DIV[@class='per_awardsbox']//DD|//DIV[@class='per_awardsbox']//H3|//DIV[@id='awardInfo_data']/DD/H3|//DIV[@id='awardInfo_data']/DD/DL/DT|//DIV[@id='awardInfo_data']/DD/DL/DD</value>
+  <description>template for awardsofpeople </description>
+</property>
+
+<property>
+  <name>template.mtime.shortcomments</name>
+  <value>MovieChineseName,//H1[@property='v:itemreviewed']/A,MovieEnglishName,//P[@class='db_enname']/A,MovieShortComment,//H3|//P[@class='px14']/A|//P[@class='mt6 px12 clearfix']|//P/SPAN[@class='db_point ml6']|//DIV[@class='mt10']/A</value>
+  <description>template for shortcomments</description>
+</property>
+
+<property>
+  <name>template.mtime.listoflongcomments</name>
+  <value>//P[@class='db_enname']|//H1[@property='v:itemreviewed']/A|//P[@class='db_year']|//DD[@class='comboxcont']/DIV/H3/A|//DD//P[@class='mt20']|//DIV[@class='pic_58']/P/A|//SPAN[@class='db_point ml12']</value>
+  <description>template for listoflongcomment</description>
+</property>
+
+<property>
+  <name>template.mtime.detailsoflongcomments</name>
+  <value>MovieChineseName,//P[@class='db_position']/A[2],MovieLongComment,//DIV[@class='db_mediacont db_commentcont']/P,MovieScoreMtime,//P[@class='mt9']/SPAN[@class='db_point px14 ml10']</value>
+  <description>template for detailsoflongcomment</description>
+</property>
+
+<property>
+  <name>template.mtime.listofnews</name>
+  <value>//DIV[@class='db_newscont']/H3/A|//DIV[@class='db_newscont']//P[@class='c_94 mt9 px12']|//DIV[@class='db_newscont']/P[@class='db_newsinfo']</value>
+  <description>template for listofnews</description>
+</property>
+<property>
+  <name>template.mtime.detailsofnews</name>
+  <value>MovieNewsOutlinks,//DL[@id='relatedInfos']/DD/A,MovieNewsName,//DL[@id='relatedInfos']/DD/H3/A,MovieNews,//DIV[@class='newsheadtit']|//P[@class='mt15 ml25 newstime ']|//DIV[@class='newsnote']|//DIV[@id='newsContent']/DIV</value>
+  <description>template for detailsofnews</description>
+</property>
+
+<property>
+  <name>template.mtime.filmographiesofpeople</name>
+  <value>MovieChineseName,//DIV[@class='per_header']//H2[@pan='M14_Person_Index_PersonName']/A,MovieEnglishName,//DIV[@class='per_header']//P[@pan='M14_Person_Index_PersonName']/A,ActorProduction,//DIV[@class='pic96']//H3|//DIV[@class='pic96']/P|//DIV[@class='pic96']/DIV/SPAN</value>
+  <description>template for filmographiesofpeople</description>
+</property>
+
+<property>
+  <name>template.mtime.detailsofpeople</name>
+  <value>MovieChineseName,//DIV[@class='per_header']//H2[@pan='M14_Person_Index_PersonName']/A,MovieEnglishName,//DIV[@class='per_header']//P[@pan='M14_Person_Index_PersonName']/A,Gender,//DL[@class='per_info_cont']/DT,ActorIntroduction,//DIV[@id='lblAllGraphy']/P|//DL[@class='per_relalist']</value>
+  <description>template for detailsofpeople</description>
+</property>
+
+<property>
+  <name>template.mtime.moredetailsofmovie</name>
+  <value>MovieChineseName,//DIV[@class='db_head']//H1[@property='v:itemreviewed']/A,MovieEnglishName,//DIV[@class='db_head']//P[@class='db_enname']/A,PublishCompany,//DIV[@class='fl wp49'][2]/UL/LI,ProduceCompany,//DIV[@class='fl wp49'][1]/UL/LI,DistributionInformation,//UL/LI/DIV[@class='countryname']/P|//UL/LI/DIV[@class='datecont']|//DL[@class='wp50 fl']/DD</value>
+  <description>template for moredetailsofmovie</description>
+</property>
+
+<property>
+  <name>template.mtime.plotsofmovie</name>
+  <value>MovieIdIMDB,//DIV[@class='plots_box']/DIV[@type='ableShare'],MovieChineseName,//DIV[@class='db_head']//H1[@property='v:itemreviewed']/A,MovieEnglishName,//DIV[@class='db_head']//P[@class='db_enname']/A,PlotIntroduction,//DIV[@class='plots_box']/DIV/P</value>
+  <description></description>
+</property>
+
+<property>
+  <name>template.mtime.actors</name>
+  <value>MovieChineseName,//DIV[@class='db_head']//H1[@property='v:itemreviewed']/A,MovieEnglishName,//DIV[@class='db_head']//P[@class='db_enname']/A,Director,//DIV[@class='credits_r']/DIV[@class='credits_list'][1],Writer,//DIV[@class='credits_r']/DIV[@class='credits_list'][2],Actor,//DIV[@class='actor_tit']//A|//DIV[@class='character_tit']//H3,Producer,//DIV[@class='credits_r']/DIV[@class='credits_list'][3]</value>
+  <description></description>
+</property>
+
+<property>
+  <name>template.mtime.characters</name>
+  <value>MovieChineseName,//DIV[@class='db_head']//H1[@property='v:itemreviewed']/A,MovieEnglishName,//DIV[@class='db_head']//P[@class='db_enname']/A,RoleIntroduction,//DL[@class='characters_1']//DIV[@class='cha_right']//H3|//DL[@class='characters_1']//DIV[@class='cha_right']//P|//DL[@class='characters_1']//DIV[@class='cha_right']/DIV[@class='cha_mid']</value>
+  <description>template for characters</description>
+</property>
+
+<property>
+  <name>template.mtime.awardsofmovie</name>
+  <value>MovieChineseName,//DIV[@class='db_head']//H1[@property='v:itemreviewed']/A,MovieEnglishName,//DIV[@class='db_head']//P[@class='db_enname']/A,MovieAwards,//DIV[@id='awardInfo_data']</value>
+  <description></description>
+</property>
+
+<property>
+  <name>template.mtime.commentofpeople</name>
+  <value>MovieChineseName,//DIV[@class='per_header']//H2[@pan='M14_Person_Index_PersonName']/A,MovieEnglishName,//DIV[@class='per_header']//P[@pan='M14_Person_Index_PersonName']/A,ActorCommentMtime,//DIV[@class='db_shortcomment']//DD/DIV[@class='mod_short none']/H3</value>
+  <description></description>
+</property>
+
+<property>
+  <name>template.mtime.award</name>
+  <value>AwardChineseName,//DIV[@class='award_head']/H3,AwardEnglishName,//DIV[@class='award_head']/H4,AwardHoldTime,//DIV[@class='td pl15 lh20']/P,AwardItems,//DIV[@class='event_awards']</value>
+  <description></description>
+</property>
+
+<property>
+  <name>template.mtime.theater</name>
+  <value>CinemaChineseName,//DIV[@class='ci_title']/H2,CinemaCity,//DIV[@class='ci_title']/P[1],CinemaIntroduction,//DL[@class='movieinfo']/DT|//DL[@class='movieinfo']/DD,CinemaDeals,//UL[@class='movieinfo']|//DIV[@class='otherinfo']</value>
+  <description></description>
+</property>
+
+<property>
+  <name>template.mtime.homepageofmovie</name>
+  <value>MovieChineseName,//DIV[@class='db_head']//H1[@property='v:itemreviewed'],MovieEnglishName,//DIV[@class='db_head']//P[@class='db_enname']</value>
+  <description></description>
+</property>
+</configuration>

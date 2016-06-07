@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<!-- Regular Expressions for extracting  informations from the websites -->
+
+<property>
+  <name>regular.expression</name>
+  <value>http://people.mtime.com/[0-9]+/awards.html,template.mtime.awardsofpeople,
+  http://movie.mtime.com/[0-9]+/reviews/short/new(-[0-9]+)?.html,template.mtime.shortcomments,
+  http://movie.mtime.com/[0-9]+/comment(-[0-9]+)?.html,template.mtime.listoflongcomments,
+  http://movie.mtime.com/[0-9]+/reviews/[0-9]{7}.html,template.mtime.detailsoflongcomments,
+  http://(movie|people).mtime.com/[0-9]+/news(-[0-9]+)?.html,template.mtime.listofnews,
+  http://news.mtime.com/[0-9]{4}/[0-9]{2}/[0-9]{2}/[0-9]{7}(-[0-9]+)?.html,template.mtime.detailsofnews,
+  http://people.mtime.com/[0-9]+/filmographies/(#pageIndex=[0-9]+)?,template.mtime.filmographiesofpeople,
+  http://people.mtime.com/[0-9]+/details.html,template.mtime.detailsofpeople,
+  http://movie.mtime.com/[0-9]+/details.html,template.mtime.moredetailsofmovie,
+  http://movie.mtime.com/[0-9]+/plots.html,template.mtime.plotsofmovie,
+  http://movie.mtime.com/[0-9]+/fullcredits.html,template.mtime.actors,
+  http://movie.mtime.com/[0-9]+/characters.html,template.mtime.characters,
+  http://movie.mtime.com/[0-9]+/awards.html,template.mtime.awardsofmovie,
+  http://people.mtime.com/[0-9]+/comment(-[0-9]+)?.html,template.mtime.commentofpeople,
+  http://award.mtime.com/[0-9]+/[0-9]{4}/,template.mtime.award,
+  http://theater.mtime.com/[^0-9]+/[0-9]{4}/(info.html)?(discount.html)?,template.mtime.theater,
+  http://movie.mtime.com/[0-9]+/,template.mtime.homepageofmovie,
+  
+  
+  
+  </value>
+  <description>Regular Expressions</description>
+</property>
+
+
+</configuration>

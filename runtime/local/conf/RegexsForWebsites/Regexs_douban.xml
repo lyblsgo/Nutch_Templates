@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<!-- Regular Expressions for extracting  informations from the websites -->
+
+<property>
+  <name>regular.expression</name>
+  <value>http://movie.douban.com/review/[0-9]{7}/,template.douban.test,</value>
+  <description>Regular Expressions</description>
+</property>
+
+
+</configuration>
